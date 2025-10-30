@@ -1,0 +1,65 @@
+/* Helpful global */
+*, *::before, *::after { box-sizing: border-box; }
+
+
+.list-movies-title {
+  padding: 0;           /* optional if your wrapper already has spacing */
+  margin: 0;
+}
+
+.list-movies-title h1 {
+  margin: 0;            /* reset default h1 margins */
+  text-align: center;   /* center the text */
+  background-color: #009B50; /* green background */
+  color: #fff;          /* white text */
+  padding: 16px 12px;   /* some breathing room */
+}
+
+
+/* Grid container: center the tracks and pack items */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
+  justify-content: center;        /* center the columns */
+  gap: 36px;
+  list-style-type: none;          /* remove bullets */
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: clamp(640px, 90vw, 1100px); /* keeps grid from being too wide */
+}
+
+/* Card */
+.movie-grid > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  padding: 14px 14px 16px;
+}
+
+/* Inside the card, center content */
+.movie-item { display: grid; place-items: center; text-align: center; }
+
+/* Poster and text */
+.movie-poster { 
+  width: 180px;
+  height: 267px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.movie-title {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.movie-year {
+  margin-top: 6px;
+  font-size: .9rem;
+  color: #555;
+}
+.movie-rating {
+  margin-top: 8px;
+  font-weight: 700;
+}
